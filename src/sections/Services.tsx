@@ -37,14 +37,18 @@ export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container-custom">
-        <h2 className="text-5xl font-bold mb-4">What We Do</h2>
+        <p className="eyebrow text-[var(--color-accent)] mb-4">Our Services</p>
 
-        <p className="text-[var(--color-text-muted)] mb-14 max-w-2xl">
+        <h2 className="heading-lg font-bold mb-4 sm:mb-6 max-w-2xl">
+          What We Do
+        </h2>
+
+        <p className="text-[var(--color-text-muted)] text-base sm:text-lg mb-10 sm:mb-14 max-w-2xl">
           From concept to print, we provide complete creative and printing
           solutions for businesses of every size.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}

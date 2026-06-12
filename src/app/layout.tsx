@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Space_Grotesk } from "next/font/google";
+import { Inter, Poppins, Space_Grotesk, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,6 +16,13 @@ const poppins = Poppins({
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

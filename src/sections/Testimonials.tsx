@@ -25,20 +25,31 @@ export default function Testimonials() {
   return (
     <section className="section">
       <div className="container-custom">
-        <h2 className="text-5xl font-bold mb-12">What Our Clients Say</h2>
+        <p className="eyebrow text-[var(--color-accent)] mb-4">Testimonials</p>
+
+        <h2 className="heading-lg font-bold mb-10 sm:mb-12">
+          What Our{" "}
+          <span className="font-display italic font-normal">
+            Clients Say
+          </span>
+        </h2>
       </div>
 
       <Marquee pauseOnHover gradient={false}>
         {testimonials.map((item) => (
           <div
             key={item.name}
-            className="mx-4 bg-white rounded-[30px] p-8 border border-[var(--color-border)] w-[380px]"
+            className="mx-3 sm:mx-4 bg-white rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 border border-[var(--color-border)] w-[300px] sm:w-[380px]"
           >
             <p className="text-[var(--color-accent)] mb-3">★★★★★</p>
 
-            <p className="text-[var(--color-text-muted)]">{item.review}</p>
+            <p className="text-[var(--color-text-muted)] text-sm sm:text-base">
+              {item.review}
+            </p>
 
-            <h3 className="font-semibold mt-4">{item.name}</h3>
+            <h3 className="font-semibold mt-4 font-display italic">
+              {item.name}
+            </h3>
           </div>
         ))}
       </Marquee>

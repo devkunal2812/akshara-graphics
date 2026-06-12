@@ -16,17 +16,20 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <p className="text-[var(--color-accent)] mb-4 font-semibold tracking-wide">
-              GET IN TOUCH
+            <p className="eyebrow text-[var(--color-accent)] mb-4">
+              Get In Touch
             </p>
 
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
-              Let&apos;s Create Something Great.
+            <h2 className="heading-lg font-bold mb-6 sm:mb-8">
+              Let&apos;s Create{" "}
+              <span className="font-display italic font-normal">
+                Something Great.
+              </span>
             </h2>
 
-            <div className="space-y-4 text-lg">
+            <div className="space-y-3 sm:space-y-4 text-base sm:text-lg">
               <p>📞 +91 XXXXX XXXXX</p>
               <p>✉️ hello@aksharagraphics.com</p>
               <p>📍 Gujarat, India</p>
@@ -37,7 +40,7 @@ export default function Contact() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-8 px-8 py-4 bg-green-500 text-white rounded-full font-semibold hover:bg-green-600 transition"
+              className="inline-block mt-6 sm:mt-8 px-6 sm:px-8 py-3.5 sm:py-4 bg-green-500 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-green-600 transition"
             >
               WhatsApp Us
             </a>
@@ -48,14 +51,14 @@ export default function Contact() {
               required
               name="name"
               placeholder="Your Name"
-              className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
             <input
               required
               name="company"
               placeholder="Company Name"
-              className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
             <input
@@ -63,7 +66,7 @@ export default function Contact() {
               type="email"
               name="email"
               placeholder="Email Address"
-              className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
             <input
@@ -71,13 +74,13 @@ export default function Contact() {
               type="tel"
               name="phone"
               placeholder="Phone Number"
-              className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
             <select
               name="service"
               defaultValue=""
-              className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             >
               <option value="" disabled>
                 Service Required
@@ -94,13 +97,13 @@ export default function Contact() {
               name="message"
               placeholder="Project Details"
               rows={6}
-              className="w-full border border-[var(--color-border)] rounded-3xl p-6 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+              className="w-full border border-[var(--color-border)] rounded-3xl p-5 sm:p-6 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
             <button
               type="submit"
               disabled={status !== "idle"}
-              className="bg-[var(--color-accent)] text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition disabled:opacity-60"
+              className="bg-[var(--color-accent)] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:opacity-90 transition disabled:opacity-60"
             >
               {status === "idle" && "Send Inquiry"}
               {status === "sending" && "Sending..."}

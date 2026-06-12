@@ -28,13 +28,13 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between py-5">
-        <a href="#" className="text-xl font-bold tracking-tight">
-          Akshara <span className="text-[var(--color-accent)]">Graphics</span>
+      <div className="container-custom flex items-center justify-between py-4 md:py-5">
+        <a href="#" className="text-lg sm:text-xl font-bold tracking-tight font-display italic">
+          Akshara <span className="text-[var(--color-accent)] not-italic">Graphics</span>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        {/* Desktop / tablet nav */}
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
           {links.map((link) => (
             <a
               key={link.href}
@@ -48,14 +48,14 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="hidden md:inline-block px-6 py-3 rounded-full bg-[var(--color-accent)] text-white text-sm font-semibold hover:opacity-90 transition"
+          className="hidden lg:inline-block px-5 py-2.5 lg:px-6 lg:py-3 rounded-full bg-[var(--color-accent)] text-white text-sm font-semibold hover:opacity-90 transition"
         >
           Get Free Quote
         </a>
 
-        {/* Mobile toggle */}
+        {/* Mobile / tablet toggle */}
         <button
-          className="md:hidden flex flex-col gap-1.5"
+          className="lg:hidden flex flex-col gap-1.5"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -65,9 +65,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile / tablet menu */}
       {open && (
-        <div className="md:hidden bg-white border-t border-[var(--color-border)]">
+        <div className="lg:hidden bg-white border-t border-[var(--color-border)]">
           <nav className="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
             {links.map((link) => (
               <a

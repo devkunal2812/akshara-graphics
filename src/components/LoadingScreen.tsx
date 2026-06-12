@@ -23,16 +23,16 @@ export default function LoadingScreen() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-display italic px-4 text-center"
           >
-            Akshara <span className="text-[var(--color-accent)]">Graphics</span>
+            Akshara <span className="text-[var(--color-accent)] not-italic">Graphics</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-3 text-[var(--color-text-muted)] tracking-wide"
+            className="mt-3 eyebrow text-[var(--color-text-muted)] text-center px-4"
           >
             Creative Design &amp; Printing Solutions
           </motion.p>

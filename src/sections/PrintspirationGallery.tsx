@@ -31,24 +31,29 @@ export default function PrintspirationGallery() {
 
   const breakpointColumnsObj = {
     default: 4,
-    1100: 3,
-    768: 2,
-    500: 1,
+    1280: 3,
+    1024: 2,
+    640: 1,
   };
 
   return (
     <section className="section" id="gallery">
       <div className="container-custom">
-        <h2 className="text-5xl font-bold mb-6">Printspiration Gallery</h2>
+        <p className="eyebrow text-[var(--color-accent)] mb-4">Inspiration</p>
 
-        <p className="text-[var(--color-text-muted)] mb-10">
+        <h2 className="heading-lg font-bold mb-3 sm:mb-6">
+          Printspiration{" "}
+          <span className="font-display italic font-normal">Gallery</span>
+        </h2>
+
+        <p className="text-[var(--color-text-muted)] text-base sm:text-lg mb-8 sm:mb-10">
           Explore inspiring design and print projects.
         </p>
 
         <input
           type="text"
           placeholder="Search projects..."
-          className="w-full border border-[var(--color-border)] rounded-full px-6 py-4 mb-8 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+          className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 mb-6 sm:mb-8 bg-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
