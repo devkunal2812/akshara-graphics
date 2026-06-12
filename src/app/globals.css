@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F5F2;
+  --foreground: #171717;
+
+  /* Akshara Graphics brand palette */
+  --color-primary: #2563EB;
+  --color-cyan: #06B6D4;
+  --color-navy: #0F172A;
+  --color-light-gray: #F8FAFC;
+  --color-accent: #D97757;
+  --color-text-muted: #5F5A54;
+  --color-border: #E5DED4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+/* Shared layout utilities used across all sections */
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Hide scrollbar for horizontal portfolio scroller */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
