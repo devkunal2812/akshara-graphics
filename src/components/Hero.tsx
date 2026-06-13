@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
 
@@ -12,6 +12,28 @@ const HeroScene = dynamic(() => import("./HeroScene"), {
 
 export default function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [showUndo, setShowUndo] = useState(false);
+
+  const handleUndo = () => {
+    setShowUndo(true);
+
+    gsap.fromTo(
+      "[data-undo-toast]",
+      { opacity: 0, y: 12, scale: 0.95 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }
+    );
+
+    window.clearTimeout((handleUndo as unknown as { _t?: number })._t);
+    (handleUndo as unknown as { _t?: number })._t = window.setTimeout(() => {
+      gsap.to("[data-undo-toast]", {
+        opacity: 0,
+        y: 8,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => setShowUndo(false),
+      });
+    }, 2200);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -123,12 +145,30 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 3D floating print products */}
+        {/* 3D clickable "Ctrl + Z" keys */}
         <div
           data-hero-scene
           className="relative h-[320px] lg:h-[420px] hidden lg:block"
         >
-          <HeroScene />
+          <HeroScene onUndo={handleUndo} />
+
+          {showUndo && (
+            <div
+              data-undo-toast
+              className="absolute top-4 right-4 bg-white border border-[var(--color-border)] rounded-2xl px-5 py-3 shadow-lg max-w-[220px]"
+            >
+              <p className="text-sm font-semibold">
+                Mistake undone <span className="text-[var(--color-accent)]">✓</span>
+              </p>
+              <p className="text-xs text-[var(--color-text-muted)] mt-1">
+                Let&apos;s design it right this time.
+              </p>
+            </div>
+          )}
+
+          <p className="absolute bottom-2 left-1/2 -translate-x-1/2 eyebrow text-[var(--color-text-muted)] text-[10px] opacity-70">
+            Click Ctrl + Z
+          </p>
         </div>
       </div>
 

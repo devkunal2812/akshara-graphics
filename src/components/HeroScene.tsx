@@ -1,56 +1,152 @@
 "use client";
 
-import { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, RoundedBox, Environment, ContactShadows } from "@react-three/drei";
+import { Suspense, useRef, useState } from "react";
+import { Canvas, useFrame, ThreeEvent } from "@react-three/fiber";
+import {
+  RoundedBox,
+  Text,
+  ContactShadows,
+  Environment,
+  Float,
+} from "@react-three/drei";
 import * as THREE from "three";
 
-/** A floating "print product" — a rounded card/box with a brand-colored material. */
-function FloatingCard({
+/**
+ * A single clickable keyboard key — a chunky rounded cap on a base,
+ * inspired by the "Ctrl + Z / My Mistakes" illustration. Click or tap
+ * to "press" the key (it depresses, then springs back).
+ */
+function KeyCap({
+  label,
   position,
-  rotation = [0, 0, 0],
-  size,
-  color,
-  metalness = 0.1,
-  roughness = 0.35,
+  color = "#2563EB",
+  labelColor = "#ffffff",
+  width = 1.6,
+  fontSize = 0.55,
+  onPress,
 }: {
+  label: string;
   position: [number, number, number];
-  rotation?: [number, number, number];
-  size: [number, number, number];
-  color: string;
-  metalness?: number;
-  roughness?: number;
+  color?: string;
+  labelColor?: string;
+  width?: number;
+  fontSize?: number;
+  onPress?: () => void;
 }) {
+  const capRef = useRef<THREE.Group>(null);
+  const [hovered, setHovered] = useState(false);
+  const [pressed, setPressed] = useState(false);
+
+  // target Y offset for the cap (relative to its resting position)
+  const targetY = useRef(0);
+
+  useFrame((_, delta) => {
+    if (!capRef.current) return;
+
+    targetY.current = pressed ? -0.18 : hovered ? 0.04 : 0;
+
+    capRef.current.position.y = THREE.MathUtils.damp(
+      capRef.current.position.y,
+      targetY.current,
+      12,
+      delta
+    );
+
+    const targetScale = pressed ? 0.96 : hovered ? 1.03 : 1;
+    const s = THREE.MathUtils.damp(capRef.current.scale.x, targetScale, 12, delta);
+    capRef.current.scale.setScalar(s);
+  });
+
+  const handlePointerDown = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    setPressed(true);
+  };
+
+  const handlePointerUp = (e: ThreeEvent<PointerEvent>) => {
+    e.stopPropagation();
+    if (pressed) onPress?.();
+    setPressed(false);
+  };
+
+  return (
+    <group position={position}>
+      {/* Base / well the key sits in */}
+      <RoundedBox
+        args={[width + 0.16, 0.28, width + 0.16]}
+        radius={0.08}
+        smoothness={4}
+        position={[0, -0.32, 0]}
+      >
+        <meshStandardMaterial color="#1E2A4A" roughness={0.6} metalness={0.2} />
+      </RoundedBox>
+
+      {/* Cap (animated) */}
+      <group
+        ref={capRef}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHovered(true);
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setHovered(false);
+          document.body.style.cursor = "auto";
+        }}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerLeave={() => setPressed(false)}
+      >
+        <RoundedBox args={[width, 0.55, width]} radius={0.12} smoothness={4}>
+          <meshStandardMaterial color={color} roughness={0.35} metalness={0.1} />
+        </RoundedBox>
+
+        <Text
+          position={[0, 0.32, 0]}
+          fontSize={fontSize}
+          color={labelColor}
+          fontWeight={700}
+          anchorX="center"
+          anchorY="middle"
+          rotation={[-Math.PI / 2.3, 0, 0]}
+        >
+          {label}
+        </Text>
+      </group>
+    </group>
+  );
+}
+
+/** Small spinning asterisk / sparkle accent, echoing the illustration's "*" mark. */
+function Sparkle({ position }: { position: [number, number, number] }) {
   const ref = useRef<THREE.Mesh>(null);
 
-  useFrame((state) => {
+  useFrame((_, delta) => {
     if (ref.current) {
-      const t = state.clock.getElapsedTime();
-      ref.current.rotation.z = rotation[2] + Math.sin(t * 0.3) * 0.04;
+      ref.current.rotation.z += delta * 0.6;
     }
   });
 
   return (
-    <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.8}>
-      <RoundedBox
-        ref={ref}
-        args={size}
-        radius={Math.min(0.1, size[2] / 2)}
-        smoothness={4}
-        position={position}
-        rotation={rotation}
-      >
-        <meshStandardMaterial color={color} roughness={roughness} metalness={metalness} />
-      </RoundedBox>
+    <Float speed={2} floatIntensity={0.6} rotationIntensity={0}>
+      <mesh ref={ref} position={position}>
+        <octahedronGeometry args={[0.32, 0]} />
+        <meshStandardMaterial color="#FB923C" roughness={0.3} />
+      </mesh>
     </Float>
   );
 }
 
-export default function HeroScene() {
+interface HeroSceneProps {
+  /** Called when the user "presses" either key. */
+  onUndo?: () => void;
+}
+
+export default function HeroScene({ onUndo }: HeroSceneProps) {
   return (
     <Canvas
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0.4, 6.5], fov: 32 }}
+      camera={{ position: [0, 1.6, 6], fov: 34 }}
       gl={{ antialias: true, alpha: true }}
     >
       <ambientLight intensity={0.8} />
@@ -58,37 +154,27 @@ export default function HeroScene() {
       <directionalLight position={[-4, -2, -3]} intensity={0.35} color="#06B6D4" />
 
       <Suspense fallback={null}>
-        <group rotation={[0.05, -0.15, 0]}>
-          {/* Business card — front, slightly tilted */}
-          <FloatingCard
-            position={[-0.9, 0.3, 0.6]}
-            rotation={[0, 0.25, -0.06]}
-            size={[2.4, 1.4, 0.05]}
+        <group rotation={[0.35, -0.25, 0]} position={[0, -0.3, 0]}>
+          <KeyCap
+            label="ctrl"
+            position={[-1, 0, 0]}
             color="#2563EB"
-            metalness={0.15}
+            fontSize={0.42}
+            onPress={onUndo}
+          />
+          <KeyCap
+            label="Z"
+            position={[0.9, 0.15, -0.2]}
+            color="#3B4FD9"
+            fontSize={0.6}
+            onPress={onUndo}
           />
 
-          {/* Brochure — behind, white */}
-          <FloatingCard
-            position={[1.1, 0.5, -0.4]}
-            rotation={[0, -0.2, 0.05]}
-            size={[1.7, 2.2, 0.06]}
-            color="#ffffff"
-            roughness={0.5}
-          />
-
-          {/* Packaging box — bottom, accent color */}
-          <FloatingCard
-            position={[0, -1.2, 0.3]}
-            rotation={[0.1, 0.3, 0]}
-            size={[1.5, 1.5, 1.5]}
-            color="#D97757"
-            roughness={0.45}
-          />
+          <Sparkle position={[-1.9, 0.6, 0.2]} />
         </group>
 
         <ContactShadows
-          position={[0, -2.1, 0]}
+          position={[0, -1.2, 0]}
           opacity={0.25}
           scale={8}
           blur={2.5}
