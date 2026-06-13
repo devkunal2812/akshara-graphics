@@ -85,7 +85,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative min-h-screen lg:h-screen lg:min-h-[640px] flex flex-col overflow-hidden"
+      className="relative lg:h-screen lg:min-h-[640px] flex flex-col overflow-hidden"
     >
       {/* Decorative CMYK gradient blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -94,7 +94,7 @@ export default function Hero() {
         <div className="absolute bottom-0 right-1/4 w-[12rem] sm:w-[16rem] lg:w-[18rem] h-[12rem] sm:h-[16rem] lg:h-[18rem] rounded-full bg-[var(--color-accent)]/15 blur-3xl" />
       </div>
 
-      <div className="container-custom flex-1 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center pt-24 sm:pt-28 lg:pt-24 pb-10 lg:pb-6">
+      <div className="container-custom flex-1 grid lg:grid-cols-2 gap-2 lg:gap-12 items-center pt-20 sm:pt-24 lg:pt-24 pb-8 lg:pb-6">
         <div className="min-w-0 py-6 lg:py-0">
           <p
             data-hero-eyebrow
@@ -148,19 +148,19 @@ export default function Hero() {
         {/* 3D clickable "Ctrl + Z" keys */}
         <div
           data-hero-scene
-          className="relative h-[320px] lg:h-[420px] hidden lg:block"
+          className="relative h-[240px] sm:h-[300px] lg:h-[420px] mt-4 lg:mt-0"
         >
           <HeroScene onUndo={handleUndo} />
 
           {showUndo && (
             <div
               data-undo-toast
-              className="absolute top-4 right-4 bg-white border border-[var(--color-border)] rounded-2xl px-5 py-3 shadow-lg max-w-[220px]"
+              className="absolute top-4 right-4 bg-white border border-[var(--color-border)] rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg max-w-[180px] sm:max-w-[220px]"
             >
-              <p className="text-sm font-semibold">
+              <p className="text-xs sm:text-sm font-semibold">
                 Mistake undone <span className="text-[var(--color-accent)]">✓</span>
               </p>
-              <p className="text-xs text-[var(--color-text-muted)] mt-1">
+              <p className="text-[10px] sm:text-xs text-[var(--color-text-muted)] mt-1">
                 Let&apos;s design it right this time.
               </p>
             </div>
