@@ -1,4 +1,5 @@
 import ServiceCard from "@/components/ServiceCard";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   {
@@ -37,22 +38,29 @@ export default function Services() {
   return (
     <section id="services" className="section">
       <div className="container-custom">
-        <p className="eyebrow text-[var(--color-accent)] mb-4">Our Services</p>
+        <ScrollReveal className="max-w-2xl mb-10 sm:mb-14">
+          <p className="eyebrow text-[var(--color-accent)] mb-4">Our Services</p>
 
-        <h2 className="heading-lg font-bold mb-4 sm:mb-6 max-w-2xl">
-          What We Do
-        </h2>
+          <h2 className="heading-lg font-bold mb-4 sm:mb-6">
+            What We Do
+          </h2>
 
-        <p className="text-[var(--color-text-muted)] text-base sm:text-lg mb-10 sm:mb-14 max-w-2xl">
-          From concept to print, we provide complete creative and printing
-          solutions for businesses of every size.
-        </p>
+          <p className="text-[var(--color-text-muted)] text-base sm:text-lg">
+            From concept to print, we provide complete creative and printing
+            solutions for businesses of every size.
+          </p>
+        </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <ScrollReveal
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          itemSelector="[data-reveal-item]"
+        >
           {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+            <div key={service.title} data-reveal-item>
+              <ServiceCard {...service} />
+            </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

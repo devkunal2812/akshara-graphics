@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
@@ -17,7 +18,7 @@ export default function Contact() {
     <section id="contact" className="section">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          <div>
+          <ScrollReveal>
             <p className="eyebrow text-[var(--color-accent)] mb-4">
               Get In Touch
             </p>
@@ -44,8 +45,9 @@ export default function Contact() {
             >
               WhatsApp Us
             </a>
-          </div>
+          </ScrollReveal>
 
+          <ScrollReveal y={60}>
           <form onSubmit={handleSubmit} className="space-y-6">
             <input
               required
@@ -110,6 +112,7 @@ export default function Contact() {
               {status === "sent" && "Sent! We'll be in touch ✓"}
             </button>
           </form>
+          </ScrollReveal>
         </div>
       </div>
     </section>

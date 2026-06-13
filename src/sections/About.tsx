@@ -1,11 +1,12 @@
 import StatCounter from "@/components/StatCounter";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function About() {
   return (
     <section id="about" className="section">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-          <div>
+          <ScrollReveal>
             <p className="eyebrow text-[var(--color-accent)] mb-4">
               About Akshara Graphics
             </p>
@@ -23,14 +24,26 @@ export default function About() {
               help businesses communicate effectively through impactful
               visual design and exceptional print quality.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 gap-6 sm:gap-10">
-            <StatCounter value={1000} suffix="+" label="Projects Completed" />
-            <StatCounter value={500} suffix="+" label="Happy Clients" />
-            <StatCounter value={10} suffix="+" label="Years Experience" />
-            <StatCounter value={50} suffix="+" label="Corporate Brands" />
-          </div>
+          <ScrollReveal
+            className="grid grid-cols-2 gap-6 sm:gap-10"
+            itemSelector="[data-reveal-item]"
+            y={24}
+          >
+            <div data-reveal-item>
+              <StatCounter value={1000} suffix="+" label="Projects Completed" />
+            </div>
+            <div data-reveal-item>
+              <StatCounter value={500} suffix="+" label="Happy Clients" />
+            </div>
+            <div data-reveal-item>
+              <StatCounter value={10} suffix="+" label="Years Experience" />
+            </div>
+            <div data-reveal-item>
+              <StatCounter value={50} suffix="+" label="Corporate Brands" />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

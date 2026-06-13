@@ -6,6 +6,7 @@ import Masonry from "react-masonry-css";
 import GalleryCard from "@/components/GalleryCard";
 import GalleryFilters from "@/components/GalleryFilters";
 import GalleryModal from "@/components/GalleryModal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 import { galleryItems, GalleryItem } from "@/data/gallery";
 
@@ -39,16 +40,18 @@ export default function PrintspirationGallery() {
   return (
     <section className="section" id="gallery">
       <div className="container-custom">
-        <p className="eyebrow text-[var(--color-accent)] mb-4">Inspiration</p>
+        <ScrollReveal className="mb-8 sm:mb-10">
+          <p className="eyebrow text-[var(--color-accent)] mb-4">Inspiration</p>
 
-        <h2 className="heading-lg font-bold mb-3 sm:mb-6">
-          Printspiration{" "}
-          <span className="font-display italic font-normal">Gallery</span>
-        </h2>
+          <h2 className="heading-lg font-bold mb-3 sm:mb-6">
+            Printspiration{" "}
+            <span className="font-display italic font-normal">Gallery</span>
+          </h2>
 
-        <p className="text-[var(--color-text-muted)] text-base sm:text-lg mb-8 sm:mb-10">
-          Explore inspiring design and print projects.
-        </p>
+          <p className="text-[var(--color-text-muted)] text-base sm:text-lg">
+            Explore inspiring design and print projects.
+          </p>
+        </ScrollReveal>
 
         <input
           type="text"

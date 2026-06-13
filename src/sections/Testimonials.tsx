@@ -1,6 +1,7 @@
 "use client";
 
 import Marquee from "react-fast-marquee";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const testimonials = [
   {
@@ -25,14 +26,16 @@ export default function Testimonials() {
   return (
     <section className="section">
       <div className="container-custom">
-        <p className="eyebrow text-[var(--color-accent)] mb-4">Testimonials</p>
+        <ScrollReveal>
+          <p className="eyebrow text-[var(--color-accent)] mb-4">Testimonials</p>
 
-        <h2 className="heading-lg font-bold mb-10 sm:mb-12">
-          What Our{" "}
-          <span className="font-display italic font-normal">
-            Clients Say
-          </span>
-        </h2>
+          <h2 className="heading-lg font-bold mb-10 sm:mb-12">
+            What Our{" "}
+            <span className="font-display italic font-normal">
+              Clients Say
+            </span>
+          </h2>
+        </ScrollReveal>
       </div>
 
       <Marquee pauseOnHover gradient={false}>
