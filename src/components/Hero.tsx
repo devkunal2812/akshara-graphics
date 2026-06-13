@@ -63,7 +63,7 @@ export default function Hero() {
   return (
     <section
       ref={rootRef}
-      className="relative h-screen min-h-[640px] flex flex-col overflow-hidden"
+      className="relative min-h-screen lg:h-screen lg:min-h-[640px] flex flex-col overflow-hidden"
     >
       {/* Decorative CMYK gradient blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -72,8 +72,8 @@ export default function Hero() {
         <div className="absolute bottom-0 right-1/4 w-[12rem] sm:w-[16rem] lg:w-[18rem] h-[12rem] sm:h-[16rem] lg:h-[18rem] rounded-full bg-[var(--color-accent)]/15 blur-3xl" />
       </div>
 
-      <div className="container-custom flex-1 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center pt-20 sm:pt-24 pb-6">
-        <div className="min-w-0">
+      <div className="container-custom flex-1 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center pt-24 sm:pt-28 lg:pt-24 pb-10 lg:pb-6">
+        <div className="min-w-0 py-6 lg:py-0">
           <p
             data-hero-eyebrow
             className="eyebrow text-[var(--color-accent)] mb-3 sm:mb-4"
@@ -126,14 +126,14 @@ export default function Hero() {
         {/* 3D floating print products */}
         <div
           data-hero-scene
-          className="relative h-[220px] sm:h-[320px] lg:h-[420px] hidden md:block"
+          className="relative h-[320px] lg:h-[420px] hidden lg:block"
         >
           <HeroScene />
         </div>
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[var(--color-text-muted)] text-xs eyebrow">
+      <div className="hidden lg:flex absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-1 text-[var(--color-text-muted)] text-xs eyebrow">
         <span>Scroll</span>
         <span className="w-px h-6 bg-[var(--color-border)]" />
       </div>

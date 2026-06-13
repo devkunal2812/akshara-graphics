@@ -2,34 +2,45 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, RoundedBox, Environment } from "@react-three/drei";
+import { Float, RoundedBox, Environment, ContactShadows } from "@react-three/drei";
 import * as THREE from "three";
 
 /** A floating "print product" — a rounded card/box with a brand-colored material. */
 function FloatingCard({
   position,
+  rotation = [0, 0, 0],
   size,
   color,
-  rotationSpeed = 0.2,
+  metalness = 0.1,
+  roughness = 0.35,
 }: {
   position: [number, number, number];
+  rotation?: [number, number, number];
   size: [number, number, number];
   color: string;
-  rotationSpeed?: number;
+  metalness?: number;
+  roughness?: number;
 }) {
   const ref = useRef<THREE.Mesh>(null);
 
-  useFrame((_, delta) => {
+  useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.y += delta * rotationSpeed;
-      ref.current.rotation.x += delta * rotationSpeed * 0.3;
+      const t = state.clock.getElapsedTime();
+      ref.current.rotation.z = rotation[2] + Math.sin(t * 0.3) * 0.04;
     }
   });
 
   return (
-    <Float speed={1.5} rotationIntensity={0.3} floatIntensity={1.2}>
-      <RoundedBox ref={ref} args={size} radius={0.08} smoothness={4} position={position}>
-        <meshStandardMaterial color={color} roughness={0.35} metalness={0.1} />
+    <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.8}>
+      <RoundedBox
+        ref={ref}
+        args={size}
+        radius={Math.min(0.1, size[2] / 2)}
+        smoothness={4}
+        position={position}
+        rotation={rotation}
+      >
+        <meshStandardMaterial color={color} roughness={roughness} metalness={metalness} />
       </RoundedBox>
     </Float>
   );
@@ -39,20 +50,50 @@ export default function HeroScene() {
   return (
     <Canvas
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 6], fov: 40 }}
+      camera={{ position: [0, 0.4, 6.5], fov: 32 }}
       gl={{ antialias: true, alpha: true }}
     >
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[5, 5, 5]} intensity={1.2} />
-      <directionalLight position={[-5, -2, -5]} intensity={0.4} color="#06B6D4" />
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[4, 6, 5]} intensity={1.4} />
+      <directionalLight position={[-4, -2, -3]} intensity={0.35} color="#06B6D4" />
 
       <Suspense fallback={null}>
-        {/* Business card */}
-        <FloatingCard position={[-1.4, 0.6, 0]} size={[2.2, 1.3, 0.06]} color="#2563EB" rotationSpeed={0.15} />
-        {/* Brochure */}
-        <FloatingCard position={[1.6, -0.4, -0.5]} size={[1.6, 2.1, 0.06]} color="#ffffff" rotationSpeed={0.2} />
-        {/* Packaging box */}
-        <FloatingCard position={[0.2, -1.3, 0.6]} size={[1.4, 1.4, 1.4]} color="#D97757" rotationSpeed={0.25} />
+        <group rotation={[0.05, -0.15, 0]}>
+          {/* Business card — front, slightly tilted */}
+          <FloatingCard
+            position={[-0.9, 0.3, 0.6]}
+            rotation={[0, 0.25, -0.06]}
+            size={[2.4, 1.4, 0.05]}
+            color="#2563EB"
+            metalness={0.15}
+          />
+
+          {/* Brochure — behind, white */}
+          <FloatingCard
+            position={[1.1, 0.5, -0.4]}
+            rotation={[0, -0.2, 0.05]}
+            size={[1.7, 2.2, 0.06]}
+            color="#ffffff"
+            roughness={0.5}
+          />
+
+          {/* Packaging box — bottom, accent color */}
+          <FloatingCard
+            position={[0, -1.2, 0.3]}
+            rotation={[0.1, 0.3, 0]}
+            size={[1.5, 1.5, 1.5]}
+            color="#D97757"
+            roughness={0.45}
+          />
+        </group>
+
+        <ContactShadows
+          position={[0, -2.1, 0]}
+          opacity={0.25}
+          scale={8}
+          blur={2.5}
+          far={3}
+        />
 
         <Environment preset="city" />
       </Suspense>
