@@ -74,7 +74,7 @@ function KeyCap({
         smoothness={4}
         position={[0, -0.34, 0]}
       >
-        <meshStandardMaterial color="#16213E" roughness={0.7} metalness={0.1} />
+        <meshStandardMaterial color="#3D3833" roughness={0.8} metalness={0.05} />
       </RoundedBox>
 
       {/* Cap (animated) */}
@@ -95,7 +95,7 @@ function KeyCap({
         onPointerLeave={() => setPressed(false)}
       >
         <RoundedBox args={[width, 0.5, width]} radius={0.14} smoothness={4}>
-          <meshStandardMaterial color={color} roughness={0.4} metalness={0.05} />
+          <meshStandardMaterial color={color} roughness={0.55} metalness={0.05} />
         </RoundedBox>
 
         <Text
@@ -127,23 +127,25 @@ export default function HeroScene({ onUndo }: HeroSceneProps) {
       gl={{ antialias: true, alpha: true }}
       style={{ width: "100%", height: "100%", display: "block" }}
     >
-      <ambientLight intensity={0.85} />
-      <directionalLight position={[4, 6, 5]} intensity={1.3} />
-      <directionalLight position={[-4, -2, -3]} intensity={0.3} color="#06B6D4" />
+      <ambientLight intensity={1.1} color="#FFF8F0" />
+      <directionalLight position={[4, 6, 5]} intensity={1.1} color="#FFF4E8" />
+      <directionalLight position={[-4, -2, -3]} intensity={0.25} color="#D97757" />
 
       <Suspense fallback={null}>
         <group rotation={[0.32, -0.22, 0]} position={[0, -0.25, 0]}>
           <KeyCap
             label="ctrl"
             position={[-1, 0, 0]}
-            color="#2563EB"
+            color="#D97757"
+            labelColor="#FFF8F0"
             fontSize={0.4}
             onPress={onUndo}
           />
           <KeyCap
             label="Z"
             position={[0.95, 0.1, -0.2]}
-            color="#3B4FD9"
+            color="#0F172A"
+            labelColor="#F8FAFC"
             fontSize={0.58}
             onPress={onUndo}
           />
@@ -151,13 +153,14 @@ export default function HeroScene({ onUndo }: HeroSceneProps) {
 
         <ContactShadows
           position={[0, -1.15, 0]}
-          opacity={0.22}
+          opacity={0.18}
           scale={7}
           blur={2.5}
           far={3}
+          color="#5F5A54"
         />
 
-        <Environment preset="city" />
+        <Environment preset="apartment" environmentIntensity={0.4} />
       </Suspense>
     </Canvas>
   );
