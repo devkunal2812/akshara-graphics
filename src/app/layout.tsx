@@ -135,12 +135,29 @@ function StructuredData() {
       siteConfig.social.facebook,
       siteConfig.social.instagram,
       siteConfig.social.indiamart,
+      siteConfig.social.tradeindia,
     ],
     areaServed: {
       "@type": "City",
       name: "Vadodara",
     },
     makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Offset Printing & Graphic Design" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Visiting Cards" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Brochures & Leaflets" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Posters & Banners" },
+      },
       {
         "@type": "Offer",
         itemOffered: { "@type": "Product", name: "Custom Printed Envelopes" },
@@ -163,11 +180,7 @@ function StructuredData() {
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Letterheads & Brochures" },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: { "@type": "Product", name: "Files, Folders & Notebooks" },
+        itemOffered: { "@type": "Product", name: "Letterheads & Logo Design" },
       },
     ],
   };

@@ -3,14 +3,24 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   {
-    title: "Paper Envelopes",
+    title: "Visiting Cards",
     description:
-      "Plain, white and custom printed paper envelopes in bulk for offices and businesses.",
+      "Professionally designed and offset-printed visiting cards that make a strong first impression.",
   },
   {
-    title: "Notebooks & Diaries",
+    title: "Brochures & Leaflets",
     description:
-      "Spiral notebooks and diaries, customizable with your branding for corporate gifting.",
+      "Eye-catching brochures and leaflets for marketing, events and product promotions.",
+  },
+  {
+    title: "Posters & Banners",
+    description:
+      "High-quality offset printing for posters and banners for shops, events and campaigns.",
+  },
+  {
+    title: "Logo & Graphic Design",
+    description:
+      "Custom logo design and graphic design services to build your brand's visual identity.",
   },
   {
     title: "Stickers & Labels",
@@ -18,19 +28,19 @@ const services = [
       "Self-adhesive paper stickers and printed labels for products and packaging.",
   },
   {
-    title: "Table Calendars",
+    title: "Notebooks & Diaries",
     description:
-      "Custom printed table and desk calendars designed for your brand.",
+      "Spiral notebooks and diaries, customizable with your branding for corporate gifting.",
   },
   {
-    title: "Name Tags & Badges",
+    title: "Paper Envelopes",
     description:
-      "Paper name tags and round brass badges for events, staff and visitors.",
+      "Plain, white and custom printed paper envelopes in bulk for offices and businesses.",
   },
   {
-    title: "Letterheads & Brochures",
+    title: "Calendars, Name Tags & Badges",
     description:
-      "Professional letterheads and printed brochures for everyday business use.",
+      "Custom table calendars, paper name tags and round brass badges for staff and events.",
   },
 ];
 

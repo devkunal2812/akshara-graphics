@@ -56,6 +56,16 @@ export default function Footer() {
                   View on IndiaMART ↗
                 </a>
               </li>
+              <li>
+                <a
+                  href={siteConfig.social.tradeindia}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--color-accent)]"
+                >
+                  View on TradeIndia ↗
+                </a>
+              </li>
             </ul>
           </div>
         </div>

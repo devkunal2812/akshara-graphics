@@ -13,25 +13,27 @@ export const siteConfig = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://akshara-graphics.vercel.app",
 
-  title: "Akshara Graphics | Printing & Stationery Manufacturer in Vadodara",
+  title: "Akshara Graphics | Graphic Design & Offset Printing in Vadodara",
   description:
-    "Akshara Graphics is a Vadodara-based printing and stationery manufacturer, established in 2000. We produce custom envelopes, notebooks & diaries, stickers & labels, calendars, name tags, brass badges, letterheads and brochures. Get a free quote today.",
+    "Akshara Graphics is a Vadodara-based printing and design company, established in 2000. We offer offset printing and graphic design for visiting cards, brochures, leaflets, posters, banners, stickers, envelopes, notebooks & diaries, calendars, name tags and brass badges. Get a free quote today.",
 
   keywords: [
     "Akshara Graphics",
     "printing services Vadodara",
-    "stationery manufacturer Vadodara",
+    "offset printing Vadodara",
+    "graphic design Vadodara",
+    "visiting card printing Vadodara",
+    "brochure and leaflet printing Vadodara",
+    "poster and banner printing Gujarat",
     "envelope printing Vadodara",
     "notebook diary manufacturer Gujarat",
     "sticker and label printing Vadodara",
     "table calendar printing Vadodara",
-    "name tag manufacturer Vadodara",
-    "brass badge manufacturer Gujarat",
-    "letterhead and brochure printing Vadodara",
+    "name tag and brass badge manufacturer Vadodara",
     "custom printing Karelibaug",
   ],
 
-  founder: "R Shah",
+  founder: "Rajesh Shah",
   foundingYear: 2000,
 
   contact: {
@@ -61,6 +63,7 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/aksharagraphics", // TODO: update
     instagram: "https://www.instagram.com/aksharagraphics", // TODO: update
     indiamart: "https://www.indiamart.com/aksharagraphics-vadodara/",
+    tradeindia: "https://www.tradeindia.com/akshara-graphics-2780047/",
   },
 
   // Mon–Sat, 10:00–19:00 (used in JSON-LD openingHoursSpecification)

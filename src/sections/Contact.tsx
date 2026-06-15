@@ -99,12 +99,14 @@ export default function Contact() {
                 <option value="" disabled>
                   Service Required
                 </option>
-                <option>Paper Envelopes</option>
-                <option>Notebooks &amp; Diaries</option>
+                <option>Visiting Cards</option>
+                <option>Brochures &amp; Leaflets</option>
+                <option>Posters &amp; Banners</option>
+                <option>Logo &amp; Graphic Design</option>
                 <option>Stickers &amp; Labels</option>
-                <option>Table Calendars</option>
-                <option>Name Tags &amp; Badges</option>
-                <option>Letterheads &amp; Brochures</option>
+                <option>Notebooks &amp; Diaries</option>
+                <option>Paper Envelopes</option>
+                <option>Calendars, Name Tags &amp; Badges</option>
                 <option>Other / Custom Order</option>
               </select>
 
