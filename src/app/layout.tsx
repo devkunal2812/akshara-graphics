@@ -106,7 +106,12 @@ function StructuredData() {
     logo: `${siteConfig.url}/og-image.jpg`,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
-    priceRange: "₹₹",
+    priceRange: "₹",
+    foundingDate: String(siteConfig.foundingYear),
+    founder: {
+      "@type": "Person",
+      name: siteConfig.founder,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.streetAddress,
@@ -134,23 +139,31 @@ function StructuredData() {
     makesOffer: [
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Graphic Design" },
+        itemOffered: { "@type": "Product", name: "Custom Printed Envelopes" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Branding Solutions" },
+        itemOffered: { "@type": "Product", name: "Spiral Notebooks & Diaries" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Printing Services" },
+        itemOffered: { "@type": "Product", name: "Self Adhesive Stickers & Labels" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Packaging Design" },
+        itemOffered: { "@type": "Product", name: "Custom Table Calendars" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Large Format Printing" },
+        itemOffered: { "@type": "Product", name: "Paper Name Tags & Brass Badges" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Letterheads & Brochures" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: "Files, Folders & Notebooks" },
       },
     ],
   };

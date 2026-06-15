@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { siteConfig } from "@/config/site";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
@@ -31,14 +32,24 @@ export default function Contact() {
             </h2>
 
             <div className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-              <p>📞 +91 XXXXX XXXXX</p>
-              <p>✉️ hello@aksharagraphics.com</p>
-              <p>📍 Gujarat, India</p>
+              <p>
+                📞{" "}
+                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="hover:text-[var(--color-accent)]">
+                  {siteConfig.contact.phone}
+                </a>
+              </p>
+              <p>
+                ✉️{" "}
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[var(--color-accent)]">
+                  {siteConfig.contact.email}
+                </a>
+              </p>
+              <p>📍 {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion} {siteConfig.address.postalCode}</p>
               <p>🕒 Mon - Sat: 10:00 AM - 7:00 PM</p>
             </div>
 
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href={siteConfig.contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-6 sm:mt-8 px-6 sm:px-8 py-3.5 sm:py-4 bg-green-500 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-green-600 transition"
@@ -87,11 +98,13 @@ export default function Contact() {
               <option value="" disabled>
                 Service Required
               </option>
-              <option>Graphic Design</option>
-              <option>Branding</option>
-              <option>Printing Services</option>
-              <option>Packaging Design</option>
-              <option>Large Format Printing</option>
+              <option>Paper Envelopes</option>
+              <option>Notebooks &amp; Diaries</option>
+              <option>Stickers &amp; Labels</option>
+              <option>Table Calendars</option>
+              <option>Name Tags &amp; Badges</option>
+              <option>Letterheads &amp; Brochures</option>
+              <option>Other / Custom Order</option>
             </select>
 
             <textarea

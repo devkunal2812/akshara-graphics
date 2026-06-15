@@ -3,34 +3,34 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   {
-    title: "Graphic Design",
+    title: "Paper Envelopes",
     description:
-      "Creative logos, posters, flyers and social media graphics that capture attention.",
+      "Plain, white and custom printed paper envelopes in bulk for offices and businesses.",
   },
   {
-    title: "Branding Solutions",
+    title: "Notebooks & Diaries",
     description:
-      "Build memorable brand identities that stand out from the competition.",
+      "Spiral notebooks and diaries, customizable with your branding for corporate gifting.",
   },
   {
-    title: "Printing Services",
+    title: "Stickers & Labels",
     description:
-      "Premium quality business cards, brochures and banners with vibrant finishes.",
+      "Self-adhesive paper stickers and printed labels for products and packaging.",
   },
   {
-    title: "Packaging Design",
+    title: "Table Calendars",
     description:
-      "Product packaging that protects, informs and attracts customers on the shelf.",
+      "Custom printed table and desk calendars designed for your brand.",
   },
   {
-    title: "Large Format Printing",
+    title: "Name Tags & Badges",
     description:
-      "Signages, flex banners, exhibition displays and outdoor advertising.",
+      "Paper name tags and round brass badges for events, staff and visitors.",
   },
   {
-    title: "Promotional Materials",
+    title: "Letterheads & Brochures",
     description:
-      "Catalogues, stickers, labels and marketing assets for every campaign.",
+      "Professional letterheads and printed brochures for everyday business use.",
   },
 ];
 

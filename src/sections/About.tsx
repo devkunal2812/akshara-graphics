@@ -12,17 +12,19 @@ export default function About() {
             </p>
 
             <h2 className="heading-lg font-bold mb-6 sm:mb-8">
-              Crafting Print Experiences That{" "}
+              Printing &amp; Stationery,{" "}
               <span className="font-display italic font-normal">
-                Leave An Impression.
+                Crafted Since 2000.
               </span>
             </h2>
 
             <p className="text-[var(--color-text-muted)] text-base sm:text-lg leading-relaxed">
-              Akshara Graphics specializes in graphic design, branding,
-              packaging, and premium printing solutions. Our mission is to
-              help businesses communicate effectively through impactful
-              visual design and exceptional print quality.
+              Akshara Graphics is a Vadodara-based manufacturer and printer of
+              envelopes, notebooks &amp; diaries, stickers &amp; labels,
+              calendars, name tags, brass badges, letterheads and brochures.
+              For over two decades we&apos;ve helped businesses across Gujarat
+              with reliable, high-quality custom printing — from small
+              stationery orders to bulk corporate requirements.
             </p>
           </ScrollReveal>
 
@@ -32,16 +34,16 @@ export default function About() {
             y={24}
           >
             <div data-reveal-item>
-              <StatCounter value={1000} suffix="+" label="Projects Completed" />
+              <StatCounter value={25} suffix="+" label="Years in Business" />
             </div>
             <div data-reveal-item>
-              <StatCounter value={500} suffix="+" label="Happy Clients" />
+              <StatCounter value={8} suffix="+" label="Product Categories" />
             </div>
             <div data-reveal-item>
-              <StatCounter value={10} suffix="+" label="Years Experience" />
+              <StatCounter value={10} suffix="+" label="Team Members" />
             </div>
             <div data-reveal-item>
-              <StatCounter value={50} suffix="+" label="Corporate Brands" />
+              <StatCounter value={500} suffix="+" label="Businesses Served" />
             </div>
           </ScrollReveal>
         </div>

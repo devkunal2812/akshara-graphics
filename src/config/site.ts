@@ -13,27 +13,32 @@ export const siteConfig = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://akshara-graphics.vercel.app",
 
-  title: "Akshara Graphics | Graphic Design & Printing Services in Vadodara",
+  title: "Akshara Graphics | Printing & Stationery Manufacturer in Vadodara",
   description:
-    "Akshara Graphics is a Vadodara-based creative design and printing studio offering logo design, branding, brochures, business cards, packaging and large-format printing. Get a free quote today.",
+    "Akshara Graphics is a Vadodara-based printing and stationery manufacturer, established in 2000. We produce custom envelopes, notebooks & diaries, stickers & labels, calendars, name tags, brass badges, letterheads and brochures. Get a free quote today.",
 
   keywords: [
     "Akshara Graphics",
-    "graphic design Vadodara",
     "printing services Vadodara",
-    "branding agency Gujarat",
-    "business card printing Vadodara",
-    "brochure design Vadodara",
-    "packaging design Gujarat",
-    "logo design company Vadodara",
-    "large format printing Vadodara",
-    "creative design studio Karelibaug",
+    "stationery manufacturer Vadodara",
+    "envelope printing Vadodara",
+    "notebook diary manufacturer Gujarat",
+    "sticker and label printing Vadodara",
+    "table calendar printing Vadodara",
+    "name tag manufacturer Vadodara",
+    "brass badge manufacturer Gujarat",
+    "letterhead and brochure printing Vadodara",
+    "custom printing Karelibaug",
   ],
 
+  founder: "R Shah",
+  foundingYear: 2000,
+
   contact: {
-    phone: "+91-XXXXXXXXXX", // TODO: replace with real phone number
-    email: "hello@aksharagraphics.com", // TODO: replace with real email
-    whatsapp: "https://wa.me/91XXXXXXXXXX", // TODO: replace with real WhatsApp number
+    phone: "+91-79-4265-9615",
+    phoneRaw: "+917942659615",
+    email: "info@aksharagraphics.com", // TODO: confirm real email
+    whatsapp: "https://wa.me/917942659615",
   },
 
   address: {

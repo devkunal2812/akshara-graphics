@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site";
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)]">
@@ -6,17 +8,17 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold">Akshara Graphics</h3>
             <p className="mt-4 text-[var(--color-text-muted)]">
-              Design. Print. Inspire.
+              Printing &amp; Stationery, Since 2000.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold">Services</h4>
+            <h4 className="font-semibold">Products</h4>
             <ul className="space-y-3 mt-4 text-[var(--color-text-muted)]">
-              <li>Graphic Design</li>
-              <li>Printing</li>
-              <li>Branding</li>
-              <li>Packaging Design</li>
+              <li>Paper Envelopes</li>
+              <li>Notebooks &amp; Diaries</li>
+              <li>Stickers &amp; Labels</li>
+              <li>Calendars &amp; Badges</li>
             </ul>
           </div>
 
@@ -33,9 +35,17 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold">Contact</h4>
             <ul className="space-y-3 mt-4 text-[var(--color-text-muted)]">
-              <li>+91 XXXXX XXXXX</li>
-              <li>hello@aksharagraphics.com</li>
-              <li>Gujarat, India</li>
+              <li>
+                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="hover:text-[var(--color-accent)]">
+                  {siteConfig.contact.phone}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[var(--color-accent)]">
+                  {siteConfig.contact.email}
+                </a>
+              </li>
+              <li>{siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}</li>
             </ul>
           </div>
         </div>
