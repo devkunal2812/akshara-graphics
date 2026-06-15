@@ -46,6 +46,16 @@ export default function Footer() {
                 </a>
               </li>
               <li>{siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}</li>
+              <li>
+                <a
+                  href={siteConfig.social.indiamart}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[var(--color-accent)]"
+                >
+                  View on IndiaMART ↗
+                </a>
+              </li>
             </ul>
           </div>
         </div>

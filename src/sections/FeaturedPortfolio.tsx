@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import { siteConfig } from "@/config/site";
 
 const projects = [
   {
@@ -47,6 +48,18 @@ export default function FeaturedPortfolio() {
             </div>
           ))}
         </ScrollReveal>
+
+        <div className="mt-8 sm:mt-10">
+          <a
+            href={siteConfig.social.indiamart}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-[var(--color-border)] font-semibold text-sm sm:text-base hover:bg-white transition"
+          >
+            View Full Product Catalog on IndiaMART
+            <span aria-hidden>↗</span>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -131,7 +131,11 @@ function StructuredData() {
       opens: siteConfig.openingHours.opens,
       closes: siteConfig.openingHours.closes,
     },
-    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
+    sameAs: [
+      siteConfig.social.facebook,
+      siteConfig.social.instagram,
+      siteConfig.social.indiamart,
+    ],
     areaServed: {
       "@type": "City",
       name: "Vadodara",

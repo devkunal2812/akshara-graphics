@@ -60,6 +60,7 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/aksharagraphics", // TODO: update
     instagram: "https://www.instagram.com/aksharagraphics", // TODO: update
+    indiamart: "https://www.indiamart.com/aksharagraphics-vadodara/",
   },
 
   // Mon–Sat, 10:00–19:00 (used in JSON-LD openingHoursSpecification)
