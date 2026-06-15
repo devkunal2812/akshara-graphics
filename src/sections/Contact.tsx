@@ -90,22 +90,40 @@ export default function Contact() {
               className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             />
 
-            <select
-              name="service"
-              defaultValue=""
-              className="w-full border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
-            >
-              <option value="" disabled>
-                Service Required
-              </option>
-              <option>Paper Envelopes</option>
-              <option>Notebooks &amp; Diaries</option>
-              <option>Stickers &amp; Labels</option>
-              <option>Table Calendars</option>
-              <option>Name Tags &amp; Badges</option>
-              <option>Letterheads &amp; Brochures</option>
-              <option>Other / Custom Order</option>
-            </select>
+            <div className="relative">
+              <select
+                name="service"
+                defaultValue=""
+                className="w-full appearance-none border border-[var(--color-border)] rounded-full px-5 sm:px-6 py-3.5 sm:py-4 text-sm sm:text-base bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] pr-12"
+              >
+                <option value="" disabled>
+                  Service Required
+                </option>
+                <option>Paper Envelopes</option>
+                <option>Notebooks &amp; Diaries</option>
+                <option>Stickers &amp; Labels</option>
+                <option>Table Calendars</option>
+                <option>Name Tags &amp; Badges</option>
+                <option>Letterheads &amp; Brochures</option>
+                <option>Other / Custom Order</option>
+              </select>
+
+              {/* Custom dropdown chevron (since appearance: none hides the native one) */}
+              <svg
+                className="pointer-events-none absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-text-muted)]"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 7.5L10 12.5L15 7.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
 
             <textarea
               required

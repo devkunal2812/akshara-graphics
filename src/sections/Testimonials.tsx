@@ -42,7 +42,7 @@ export default function Testimonials() {
         {testimonials.map((item) => (
           <div
             key={item.name}
-            className="mx-3 sm:mx-4 bg-white rounded-[24px] sm:rounded-[30px] p-6 sm:p-8 border border-[var(--color-border)] w-[300px] sm:w-[380px]"
+            className="mx-3 sm:mx-4 bg-white rounded-[24px] sm:rounded-[30px] p-5 sm:p-6 border border-[var(--color-border)] w-[300px] sm:w-[380px]"
           >
             <p className="text-[var(--color-accent)] mb-3">★★★★★</p>
 
