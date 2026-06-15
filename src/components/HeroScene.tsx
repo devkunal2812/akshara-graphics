@@ -143,9 +143,9 @@ export default function HeroScene({ onUndo }: HeroSceneProps) {
           />
           <KeyCap
             label="Z"
-            position={[0.95, 0.1, -0.2]}
-            color="#0F172A"
-            labelColor="#F8FAFC"
+            position={[0.95, 0, 0]}
+            color="#06B6D4"
+            labelColor="#0F172A"
             fontSize={0.58}
             onPress={onUndo}
           />
