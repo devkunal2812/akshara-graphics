@@ -11,7 +11,7 @@ import {
 import * as THREE from "three";
 
 /**
- * A single clickable keyboard key — a chunky rounded cap on a base.
+ * A single clickable keyboard key - a chunky rounded cap on a base.
  * Click or tap to "press" the key (it depresses, then springs back).
  */
 function KeyCap({

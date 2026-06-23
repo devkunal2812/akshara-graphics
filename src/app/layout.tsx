@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
-      "Graphic design and offset printing in Vadodara — visiting cards, brochures, posters, banners, stickers, diaries, envelopes and calendars. Get a free quote today.",
+      "Graphic design and offset printing in Vadodara - visiting cards, brochures, posters, banners, stickers, diaries, envelopes and calendars. Get a free quote today.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Design. Print. Inspire.`,
+        alt: `${siteConfig.name} - Design. Print. Inspire.`,
       },
     ],
   },

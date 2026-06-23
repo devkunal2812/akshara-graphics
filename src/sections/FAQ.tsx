@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Do you handle bulk and corporate orders?",
     answer:
-      "Yes — we regularly handle bulk and corporate orders for envelopes, notebooks, diaries, calendars and visiting cards for businesses across Gujarat.",
+      "Yes - we regularly handle bulk and corporate orders for envelopes, notebooks, diaries, calendars and visiting cards for businesses across Gujarat.",
   },
 ];
 

@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     name: "Corporate Client",
-    review: "Fast delivery and premium finishing — exactly what we needed for our event.",
+    review: "Fast delivery and premium finishing - exactly what we needed for our event.",
   },
   {
     name: "Vikram Mehta",

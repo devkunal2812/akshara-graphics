@@ -19,13 +19,13 @@ export default function About() {
             </h2>
 
             <p className="text-[var(--color-text-muted)] text-base sm:text-lg leading-relaxed mb-4">
-              Welcome to Akshara Graphics — your one-stop-shop for all your printing needs.
+              Welcome to Akshara Graphics - your one-stop-shop for all your printing needs.
               We offer a wide range of printing services including business cards, brochures,
               banners, posters, stickers, notebooks, diaries, calendars and much more.
             </p>
             <p className="text-[var(--color-text-muted)] text-base sm:text-lg leading-relaxed">
               We believe that every print tells a story. From the initial consultation to the
-              final product, our team guides you every step of the way — with transparent
+              final product, our team guides you every step of the way - with transparent
               pricing, clear timelines, and open communication throughout.
             </p>
           </ScrollReveal>

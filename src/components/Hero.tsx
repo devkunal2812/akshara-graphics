@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { gsap } from "gsap";
 
-// Three.js scene is client-only and fairly heavy — load it lazily, no SSR.
+// Three.js scene is client-only and fairly heavy - load it lazily, no SSR.
 const HeroScene = dynamic(() => import("./HeroScene"), {
   ssr: false,
   loading: () => null,

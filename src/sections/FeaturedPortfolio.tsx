@@ -37,7 +37,7 @@ export default function FeaturedPortfolio() {
           <p className="eyebrow text-[var(--color-accent)] mb-4">Our Work</p>
           <h2 className="heading-lg font-bold mb-3 sm:mb-4">Featured Work</h2>
           <p className="text-[var(--color-text-muted)] text-base sm:text-lg">
-            Real projects, real results — printed right here in Vadodara.
+            Real projects, real results - printed right here in Vadodara.
           </p>
         </ScrollReveal>
 

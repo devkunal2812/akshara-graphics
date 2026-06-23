@@ -4,7 +4,7 @@
  * IMPORTANT: Update `url` to your real production domain once you have one
  * (e.g. "https://aksharagraphics.in"). You can also set the
  * NEXT_PUBLIC_SITE_URL environment variable to override this without
- * touching code — useful for staging vs. production deployments.
+ * touching code - useful for staging vs. production deployments.
  */
 export const siteConfig = {
   name: "Akshara Graphics",
@@ -52,7 +52,7 @@ export const siteConfig = {
     addressCountry: "IN",
   },
 
-  // Approximate coordinates for Karelibaug, Vadodara — refine with exact
+  // Approximate coordinates for Karelibaug, Vadodara - refine with exact
   // lat/long from Google Maps for best local SEO results.
   geo: {
     latitude: 22.3251,

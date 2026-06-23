@@ -52,9 +52,9 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Quote Request — ${form.service || "General Inquiry"} — ${form.name}`,
+          _subject: `New Quote Request - ${form.service || "General Inquiry"} - ${form.name}`,
           name: form.name,
-          company: form.company || "—",
+          company: form.company || "-",
           email: form.email,
           phone: form.phone,
           service: form.service || "Not specified",
@@ -222,7 +222,7 @@ export default function Contact() {
                 <textarea
                   required
                   name="message"
-                  placeholder="Project Details — quantity, size, any specific requirements *"
+                  placeholder="Project Details - quantity, size, any specific requirements *"
                   rows={5}
                   value={form.message}
                   onChange={handleChange}
