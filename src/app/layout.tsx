@@ -133,6 +133,11 @@ export const metadata: Metadata = {
   },
 
   category: "business",
+
+  // Google Search Console ownership verification
+  verification: {
+    google: "google759196df54ae615c",
+  },
 };
 
 // ─── Structured Data (JSON-LD) ────────────────────────────────────────────────
@@ -359,6 +364,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
+        {/* Google Search Console verification
+            Both methods active: HTML file at /google759196df54ae615c.html
+            and meta tag below (meta tag is more reliable long-term) */}
+        <meta name="google-site-verification" content="google759196df54ae615c" />
+
         {/* Theme color for mobile browser chrome (Android Chrome, Safari) */}
         <meta name="theme-color" content="#D97757" />
         <meta name="color-scheme" content="light" />
