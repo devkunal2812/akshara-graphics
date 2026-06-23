@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -24,16 +25,25 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md border-b border-[var(--color-border)]"
+          ? "bg-white/90 backdrop-blur-md border-b border-[var(--color-border)]"
           : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between py-4 md:py-5">
-        <a href="#" className="text-lg sm:text-xl font-bold tracking-tight font-display italic">
-          Akshara <span className="text-[var(--color-accent)] not-italic">Graphics</span>
+      <div className="container-custom flex items-center justify-between py-3 md:py-4">
+
+        {/* Real logo */}
+        <a href="#" aria-label="Akshara Graphics home">
+          <Image
+            src="/logo.png"
+            alt="Akshara Graphics logo"
+            width={160}
+            height={64}
+            className="h-10 sm:h-12 w-auto object-contain"
+            priority
+          />
         </a>
 
-        {/* Desktop / tablet nav */}
+        {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-7 text-sm font-medium">
           {links.map((link) => (
             <a
@@ -53,7 +63,7 @@ export default function Navbar() {
           Get Free Quote
         </a>
 
-        {/* Mobile / tablet toggle */}
+        {/* Mobile/tablet toggle */}
         <button
           className="lg:hidden flex flex-col gap-1.5"
           onClick={() => setOpen((o) => !o)}
@@ -65,7 +75,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile / tablet menu */}
+      {/* Mobile/tablet menu */}
       {open && (
         <div className="lg:hidden bg-white border-t border-[var(--color-border)]">
           <nav aria-label="Mobile navigation" className="flex flex-col px-6 py-4 gap-4 text-sm font-medium">

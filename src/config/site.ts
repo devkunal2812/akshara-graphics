@@ -34,7 +34,7 @@ export const siteConfig = {
   ],
 
   founder: "Rajesh Shah",
-  foundingYear: 2000,
+  foundingYear: 1991,
 
   contact: {
     phone: "+91-79-4265-9615",

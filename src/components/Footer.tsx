@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold">Akshara Graphics</h3>
             <p className="mt-4 text-[var(--color-text-muted)]">
-              Printing &amp; Stationery, Since 2000.
+              Printing &amp; Stationery, Since 1991.
             </p>
           </div>
 

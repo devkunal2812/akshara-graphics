@@ -9,6 +9,7 @@ import About from "@/sections/About";
 import FeaturedPortfolio from "@/sections/FeaturedPortfolio";
 import PrintspirationGallery from "@/sections/PrintspirationGallery";
 import Testimonials from "@/sections/Testimonials";
+import Clients from "@/sections/Clients";
 import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
 
@@ -26,6 +27,7 @@ export default function HomePage() {
         <FeaturedPortfolio />
         <PrintspirationGallery />
         <About />
+        <Clients />
         <Testimonials />
         <FAQ />
         <Contact />

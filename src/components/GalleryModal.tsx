@@ -23,7 +23,7 @@ export default function GalleryModal({ item, close }: Props) {
       >
         <div className="relative w-full aspect-[16/9]">
           <Image
-            src={`${item.image}?auto=format&fit=crop&w=1200&q=80`}
+            src={item.image}
             alt={item.alt}
             fill
             className="object-cover"

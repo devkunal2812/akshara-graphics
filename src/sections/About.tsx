@@ -12,19 +12,21 @@ export default function About() {
             </p>
 
             <h2 className="heading-lg font-bold mb-6 sm:mb-8">
-              Printing &amp; Stationery,{" "}
+              Printing &amp; Design,{" "}
               <span className="font-display italic font-normal">
-                Crafted Since 2000.
+                Proudly Since 1991.
               </span>
             </h2>
 
+            <p className="text-[var(--color-text-muted)] text-base sm:text-lg leading-relaxed mb-4">
+              Welcome to Akshara Graphics — your one-stop-shop for all your printing needs.
+              We offer a wide range of printing services including business cards, brochures,
+              banners, posters, stickers, notebooks, diaries, calendars and much more.
+            </p>
             <p className="text-[var(--color-text-muted)] text-base sm:text-lg leading-relaxed">
-              Akshara Graphics is a Vadodara-based manufacturer and printer of
-              envelopes, notebooks &amp; diaries, stickers &amp; labels,
-              calendars, name tags, brass badges, letterheads and brochures.
-              For over two decades we&apos;ve helped businesses across Gujarat
-              with reliable, high-quality custom printing — from small
-              stationery orders to bulk corporate requirements.
+              We believe that every print tells a story. From the initial consultation to the
+              final product, our team guides you every step of the way — with transparent
+              pricing, clear timelines, and open communication throughout.
             </p>
           </ScrollReveal>
 
@@ -34,7 +36,7 @@ export default function About() {
             y={24}
           >
             <div data-reveal-item>
-              <StatCounter value={25} suffix="+" label="Years in Business" />
+              <StatCounter value={30} suffix="+" label="Years in Business" />
             </div>
             <div data-reveal-item>
               <StatCounter value={8} suffix="+" label="Product Categories" />
