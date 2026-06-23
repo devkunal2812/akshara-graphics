@@ -19,7 +19,7 @@ export default function GalleryCard({ item, onClick }: Props) {
       <div className="overflow-hidden rounded-3xl relative aspect-[4/5]">
         <Image
           src={`${item.image}?auto=format&fit=crop&w=600&q=80`}
-          alt={item.title}
+          alt={item.alt}
           fill
           className="object-cover transition duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, 25vw"

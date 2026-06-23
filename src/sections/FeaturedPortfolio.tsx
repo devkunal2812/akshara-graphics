@@ -27,7 +27,7 @@ const projects = [
 
 export default function FeaturedPortfolio() {
   return (
-    <section id="portfolio" className="section">
+    <section aria-label="Featured Work Portfolio" id="portfolio" className="section">
       <div className="container-custom">
         <ScrollReveal className="mb-8 sm:mb-12">
           <p className="eyebrow text-[var(--color-accent)] mb-4">Our Work</p>

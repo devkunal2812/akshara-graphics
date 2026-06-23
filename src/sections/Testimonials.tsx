@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section">
+    <section aria-label="Client Testimonials" className="section">
       <div className="container-custom">
         <ScrollReveal>
           <p className="eyebrow text-[var(--color-accent)] mb-4">Testimonials</p>

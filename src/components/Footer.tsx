@@ -2,7 +2,7 @@ import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border)]">
+    <footer aria-label="Site footer" className="border-t border-[var(--color-border)]">
       <div className="container-custom py-20">
         <div className="grid md:grid-cols-4 gap-10">
           <div>
@@ -28,6 +28,7 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-[var(--color-accent)]">About</a></li>
               <li><a href="#portfolio" className="hover:text-[var(--color-accent)]">Portfolio</a></li>
               <li><a href="#gallery" className="hover:text-[var(--color-accent)]">Gallery</a></li>
+              <li><a href="#faq" className="hover:text-[var(--color-accent)]">FAQ</a></li>
               <li><a href="#contact" className="hover:text-[var(--color-accent)]">Contact</a></li>
             </ul>
           </div>

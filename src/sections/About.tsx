@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function About() {
   return (
-    <section id="about" className="section">
+    <section aria-label="About Akshara Graphics" id="about" className="section">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <ScrollReveal>

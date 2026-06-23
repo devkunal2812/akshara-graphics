@@ -34,7 +34,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop / tablet nav */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-7 text-sm font-medium">
           {links.map((link) => (
             <a
               key={link.href}
@@ -68,7 +68,7 @@ export default function Navbar() {
       {/* Mobile / tablet menu */}
       {open && (
         <div className="lg:hidden bg-white border-t border-[var(--color-border)]">
-          <nav className="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+          <nav aria-label="Mobile navigation" className="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
             {links.map((link) => (
               <a
                 key={link.href}

@@ -9,6 +9,7 @@ import About from "@/sections/About";
 import FeaturedPortfolio from "@/sections/FeaturedPortfolio";
 import PrintspirationGallery from "@/sections/PrintspirationGallery";
 import Testimonials from "@/sections/Testimonials";
+import FAQ from "@/sections/FAQ";
 import Contact from "@/sections/Contact";
 
 export default function HomePage() {
@@ -19,13 +20,14 @@ export default function HomePage() {
 
       <Navbar />
 
-      <main>
+      <main aria-label="Akshara Graphics main content">
         <Hero />
         <Services />
         <FeaturedPortfolio />
         <PrintspirationGallery />
         <About />
         <Testimonials />
+        <FAQ />
         <Contact />
       </main>
 

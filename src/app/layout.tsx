@@ -1,30 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Space_Grotesk, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -63,7 +39,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
-      "Creative graphic design, branding, packaging and premium printing services in Vadodara, Gujarat. Transform your ideas into impactful visual experiences.",
+      "Graphic design and offset printing in Vadodara — visiting cards, brochures, posters, banners, stickers, diaries, envelopes and calendars. Get a free quote today.",
     images: [
       {
         url: "/og-image.jpg",
@@ -185,12 +161,76 @@ function StructuredData() {
     ],
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What printing services does Akshara Graphics offer in Vadodara?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Akshara Graphics offers offset printing and graphic design for visiting cards, brochures, leaflets, posters and banners, along with stationery products like stickers, labels, notebooks, diaries, envelopes, table calendars, name tags and brass badges.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is Akshara Graphics located?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Akshara Graphics is located near BPCL Petrol Pump, 16/18 Bahucharaji Road, Laxmi Estate, Karelibaug, Vadodara, Gujarat 390018.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can I get a price quote for printing or design work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can request a free quote by filling out the contact form on this website, calling us directly, or messaging us on WhatsApp. Share your product, quantity and design requirements for the fastest response.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Akshara Graphics do bulk and corporate orders?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Akshara Graphics regularly handles bulk and corporate orders for items such as envelopes, notebooks, diaries, calendars and visiting cards for businesses across Gujarat.",
+        },
+      },
+    ],
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+    ],
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+    </>
   );
 }
 
@@ -205,7 +245,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable} ${playfair.variable} antialiased`}
+        className="antialiased"
       >
         {children}
       </body>

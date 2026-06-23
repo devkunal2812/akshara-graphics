@@ -38,7 +38,7 @@ export default function PrintspirationGallery() {
   };
 
   return (
-    <section className="section" id="gallery">
+    <section aria-label="Design and Print Gallery" className="section" id="gallery">
       <div className="container-custom">
         <ScrollReveal className="mb-8 sm:mb-10">
           <p className="eyebrow text-[var(--color-accent)] mb-4">Inspiration</p>

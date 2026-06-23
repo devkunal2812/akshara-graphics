@@ -16,7 +16,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section">
+    <section aria-label="Contact and Get a Quote" id="contact" className="section">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <ScrollReveal>

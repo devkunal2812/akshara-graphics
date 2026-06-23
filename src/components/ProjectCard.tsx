@@ -7,15 +7,16 @@ interface Props {
   image: string;
   title: string;
   category: string;
+  alt?: string;
 }
 
-export default function ProjectCard({ image, title, category }: Props) {
+export default function ProjectCard({ image, title, category, alt }: Props) {
   return (
     <motion.div whileHover={{ y: -10 }} className="min-w-[300px] md:min-w-[380px]">
       <div className="overflow-hidden rounded-[30px] relative h-[400px] md:h-[500px]">
         <Image
           src={`${image}?auto=format&fit=crop&w=800&q=80`}
-          alt={title}
+          alt={alt ?? `${title} — ${category} by Akshara Graphics`}
           fill
           className="object-cover transition duration-700 hover:scale-105"
           sizes="(max-width: 768px) 80vw, 400px"

@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section">
+    <section aria-label="Our Printing and Design Services" id="services" className="section">
       <div className="container-custom">
         <ScrollReveal className="max-w-2xl mb-10 sm:mb-14">
           <p className="eyebrow text-[var(--color-accent)] mb-4">Our Services</p>
