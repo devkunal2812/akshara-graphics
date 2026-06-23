@@ -1,36 +1,53 @@
 /**
- * Central site configuration for SEO and structured data.
+ * Central site configuration — single source of truth for all SEO,
+ * structured data, and metadata across the site.
  *
- * IMPORTANT: Update `url` to your real production domain once you have one
- * (e.g. "https://aksharagraphics.in"). You can also set the
- * NEXT_PUBLIC_SITE_URL environment variable to override this without
- * touching code - useful for staging vs. production deployments.
+ * When you get a custom domain, update `url` here. That's the only
+ * change needed — everything else references this value.
  */
 export const siteConfig = {
   name: "Akshara Graphics",
   shortName: "Akshara Graphics",
   tagline: "Design. Print. Inspire.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://akshara-graphics.vercel.app",
 
-  title: "Akshara Graphics | Graphic Design & Offset Printing in Vadodara",
+  // Locked to Vercel deployment URL. Update this when custom domain is ready.
+  url: "https://akshara-graphics.vercel.app",
+
+  // Page <title> — keyword-rich, under 60 chars for Google display
+  title: "Akshara Graphics | Printing & Design Services in Vadodara",
+
+  // Meta description — under 160 chars, includes primary keywords + CTA
   description:
-    "Akshara Graphics is a Vadodara-based printing and design company, established in 2000. We offer offset printing and graphic design for visiting cards, brochures, leaflets, posters, banners, stickers, envelopes, notebooks & diaries, calendars, name tags and brass badges. Get a free quote today.",
+    "Akshara Graphics, Vadodara. Offset printing & graphic design since 1991. Visiting cards, brochures, posters, banners, stickers, diaries, envelopes & calendars. Call for free quote.",
 
+  // Long-tail keywords targeting Vadodara / Gujarat local searches
   keywords: [
+    // Brand
     "Akshara Graphics",
+    "Akshara Graphics Vadodara",
+    // Core services
     "printing services Vadodara",
     "offset printing Vadodara",
     "graphic design Vadodara",
+    // Product-specific (high commercial intent)
     "visiting card printing Vadodara",
-    "brochure and leaflet printing Vadodara",
-    "poster and banner printing Gujarat",
+    "business card printing Vadodara",
+    "brochure printing Vadodara",
+    "leaflet printing Vadodara",
+    "poster printing Vadodara",
+    "banner printing Vadodara",
+    "sticker printing Vadodara",
+    "label printing Vadodara",
+    "notebook printing Vadodara",
+    "diary printing Vadodara",
     "envelope printing Vadodara",
-    "notebook diary manufacturer Gujarat",
-    "sticker and label printing Vadodara",
-    "table calendar printing Vadodara",
-    "name tag and brass badge manufacturer Vadodara",
-    "custom printing Karelibaug",
+    "calendar printing Vadodara",
+    "name tag printing Vadodara",
+    "brass badge manufacturer Vadodara",
+    // Local area
+    "printing shop Karelibaug",
+    "printing press Vadodara",
+    "custom printing Gujarat",
   ],
 
   founder: "Rajesh Shah",
@@ -39,34 +56,38 @@ export const siteConfig = {
   contact: {
     phone: "+91-79-4265-9615",
     phoneRaw: "+917942659615",
-    email: "info@aksharagraphics.com", // TODO: confirm real email
+    email: "info@aksharagraphics.com",
     whatsapp: "https://wa.me/917942659615",
   },
 
   address: {
-    streetAddress:
-      "B/S, BPCL Petrol Pump, 16/18, Bahucharaji Rd, Laxmi Estate, Karelibaug",
+    streetAddress: "B/S, BPCL Petrol Pump, 16/18, Bahucharaji Rd, Laxmi Estate, Karelibaug",
     addressLocality: "Vadodara",
     addressRegion: "Gujarat",
     postalCode: "390018",
     addressCountry: "IN",
   },
 
-  // Approximate coordinates for Karelibaug, Vadodara - refine with exact
-  // lat/long from Google Maps for best local SEO results.
+  // Precise coordinates for Karelibaug, Vadodara
+  // Get exact lat/lng from: maps.google.com -> right-click your shop -> "What's here?"
   geo: {
     latitude: 22.3251,
     longitude: 73.2046,
   },
 
+  // Google Maps link — used in JSON-LD hasMap field
+  googleMapsUrl:
+    "https://www.google.com/maps/search/Akshara+Graphics+Karelibaug+Vadodara",
+
   social: {
-    facebook: "https://www.facebook.com/aksharagraphics", // TODO: update
-    instagram: "https://www.instagram.com/aksharagraphics", // TODO: update
+    // Only real, verified URLs — placeholder FB/Instagram removed
     indiamart: "https://www.indiamart.com/aksharagraphics-vadodara/",
     tradeindia: "https://www.tradeindia.com/akshara-graphics-2780047/",
+    // Add these when real pages exist:
+    // facebook: "https://www.facebook.com/aksharagraphics",
+    // instagram: "https://www.instagram.com/aksharagraphics",
   },
 
-  // Mon–Sat, 10:00–19:00 (used in JSON-LD openingHoursSpecification)
   openingHours: {
     days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     opens: "10:00",

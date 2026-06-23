@@ -4,58 +4,21 @@ import { siteConfig } from "@/config/site";
 /**
  * Generates /sitemap.xml automatically via Next.js.
  *
- * Since this is a single-page site with anchor sections, we list the
- * homepage at priority 1.0 and each anchor as a separate URL entry
- * so search engines can deep-link to sections.
+ * For single-page apps, only submit the root URL to Google.
+ * Anchor (#) URLs are NOT real URLs - Googlebot ignores the fragment
+ * and treats them all as the same page. Listing them in a sitemap
+ * causes "Submitted URL not found (404)" warnings in Search Console.
  *
- * Update `lastModified` whenever a section's content changes significantly.
+ * The lastModified date tells Google when content last changed,
+ * helping it prioritize recrawling.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteConfig.url;
-  const now = new Date();
-
   return [
     {
-      url: base,
-      lastModified: now,
+      url: siteConfig.url,
+      lastModified: new Date("2025-06-15"), // update this when you make major content changes
       changeFrequency: "weekly",
       priority: 1.0,
-    },
-    {
-      url: `${base}/#services`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/#portfolio`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/#gallery`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/#about`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/#faq`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/#contact`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.9,
     },
   ];
 }
