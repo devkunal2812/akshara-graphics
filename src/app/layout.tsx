@@ -126,10 +126,7 @@ export const metadata: Metadata = {
     "business:contact_data:country_name": "India",
     "business:contact_data:phone_number": siteConfig.contact.phone,
     "business:contact_data:email": siteConfig.contact.email,
-    // Google Search Console verification
-    // TODO: Replace with your actual verification code from:
-    // search.google.com/search-console -> Add property -> HTML tag method
-    // "google-site-verification": "YOUR_VERIFICATION_CODE_HERE",
+    // Google Search Console verification - set via verification field below
   },
 
   category: "business",
