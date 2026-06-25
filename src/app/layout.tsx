@@ -280,7 +280,7 @@ function StructuredData() {
         name: "How can I get a price quote for printing?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can get a free quote by filling the contact form on our website, calling +91-79-4265-9615, or WhatsApp messaging us. Share your product type, quantity, size and design details for the fastest response.",
+          text: "You can get a free quote by filling the contact form on our website, calling +91-89804-50882, or WhatsApp messaging us. Share your product type, quantity, size and design details for the fastest response.",
         },
       },
       {
@@ -304,7 +304,7 @@ function StructuredData() {
         name: "What is the contact number for Akshara Graphics?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can reach Akshara Graphics at +91-79-4265-9615. We are available Monday to Saturday, 10:00 AM to 7:00 PM IST.",
+          text: "You can reach Akshara Graphics at +91-89804-50882. We are available Monday to Saturday, 10:00 AM to 7:00 PM IST.",
         },
       },
     ],

@@ -54,10 +54,10 @@ export const siteConfig = {
   foundingYear: 1991,
 
   contact: {
-    phone: "+91-79-4265-9615",
-    phoneRaw: "+917942659615",
-    email: "info@aksharagraphics.com",
-    whatsapp: "https://wa.me/917942659615",
+    phone: "+91-89804-50882",
+    phoneRaw: "+918980450882",
+    email: "aksharagraffix@gmail.com",
+    whatsapp: "https://wa.me/918980450882",
   },
 
   address: {
