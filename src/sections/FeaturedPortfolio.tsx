@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { siteConfig } from "@/config/site";
+import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 
 const projects = [
   {
@@ -71,7 +72,7 @@ export default function FeaturedPortfolio() {
             className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-[var(--color-border)] font-semibold text-sm sm:text-base hover:bg-white transition"
           >
             View Full Product Catalog on IndiaMART
-            <span aria-hidden>↗</span>
+            <ExternalLinkIcon />
           </a>
         </div>
       </div>

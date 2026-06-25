@@ -134,11 +134,11 @@ export default function HeroScene({ onUndo }: HeroSceneProps) {
       <Suspense fallback={null}>
         <group rotation={[0.32, -0.22, 0]} position={[0, -0.25, 0]}>
           <KeyCap
-            label="ctrl"
+            label="ctrl +"
             position={[-1, 0, 0]}
             color="#D97757"
             labelColor="#FFF8F0"
-            fontSize={0.4}
+            fontSize={0.32}
             onPress={onUndo}
           />
           <KeyCap

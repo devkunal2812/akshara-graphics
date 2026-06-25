@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import ExternalLinkIcon from "@/components/ExternalLinkIcon";
 
 export default function Footer() {
   return (
@@ -64,7 +65,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[var(--color-accent)]"
                 >
-                  View on IndiaMART ↗
+                  View on IndiaMART <ExternalLinkIcon className="inline w-3 h-3 mb-0.5" />
                 </a>
               </li>
               <li>
@@ -74,7 +75,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[var(--color-accent)]"
                 >
-                  View on TradeIndia ↗
+                  View on TradeIndia <ExternalLinkIcon className="inline w-3 h-3 mb-0.5" />
                 </a>
               </li>
             </ul>
