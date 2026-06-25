@@ -99,23 +99,17 @@ export default function Contact() {
             </h2>
 
             <div className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-              <p>
-                📞{" "}
-                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="hover:text-[var(--color-accent)]">
-                  {siteConfig.contact.phone}
-                </a>
-              </p>
-
-              {/* Team contacts */}
-              <div className="space-y-2 pl-6 border-l-2 border-[var(--color-border)]">
-                <p className="text-sm text-[var(--color-text-muted)] font-medium">Direct contacts:</p>
-                <p className="text-sm sm:text-base">
+              {/* Named contacts — no duplicate main number */}
+              <div className="space-y-2">
+                <p>
+                  📞{" "}
                   <span className="font-medium">Rajesh Shah</span>{" "}
                   <a href="tel:+918980450882" className="hover:text-[var(--color-accent)]">
                     +91 89804 50882
                   </a>
                 </p>
-                <p className="text-sm sm:text-base">
+                <p>
+                  📞{" "}
                   <span className="font-medium">Nilesh Chauhan</span>{" "}
                   <a href="tel:+919925069952" className="hover:text-[var(--color-accent)]">
                     +91 99250 69952

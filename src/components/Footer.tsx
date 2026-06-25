@@ -38,11 +38,6 @@ export default function Footer() {
             <h4 className="font-semibold">Contact</h4>
             <ul className="space-y-3 mt-4 text-[var(--color-text-muted)]">
               <li>
-                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="hover:text-[var(--color-accent)]">
-                  {siteConfig.contact.phone}
-                </a>
-              </li>
-              <li>
                 <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[var(--color-accent)]">
                   {siteConfig.contact.email}
                 </a>
