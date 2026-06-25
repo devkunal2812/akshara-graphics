@@ -105,6 +105,23 @@ export default function Contact() {
                   {siteConfig.contact.phone}
                 </a>
               </p>
+
+              {/* Team contacts */}
+              <div className="space-y-2 pl-6 border-l-2 border-[var(--color-border)]">
+                <p className="text-sm text-[var(--color-text-muted)] font-medium">Direct contacts:</p>
+                <p className="text-sm sm:text-base">
+                  <span className="font-medium">Rajesh Shah</span>{" "}
+                  <a href="tel:+918980450882" className="hover:text-[var(--color-accent)]">
+                    +91 89804 50882
+                  </a>
+                </p>
+                <p className="text-sm sm:text-base">
+                  <span className="font-medium">Nilesh Chauhan</span>{" "}
+                  <a href="tel:+919925069952" className="hover:text-[var(--color-accent)]">
+                    +91 99250 69952
+                  </a>
+                </p>
+              </div>
               <p>
                 ✉️{" "}
                 <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[var(--color-accent)]">

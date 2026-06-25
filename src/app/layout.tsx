@@ -163,7 +163,21 @@ function StructuredData() {
     founder: {
       "@type": "Person",
       name: siteConfig.founder,
+      telephone: "+918980450882",
     },
+    employee: [
+      {
+        "@type": "Person",
+        name: "Rajesh Shah",
+        telephone: "+918980450882",
+        jobTitle: "Proprietor",
+      },
+      {
+        "@type": "Person",
+        name: "Nilesh Chauhan",
+        telephone: "+919925069952",
+      },
+    ],
     // logo must be ImageObject for Google Knowledge Panel logo eligibility
     logo: {
       "@type": "ImageObject",

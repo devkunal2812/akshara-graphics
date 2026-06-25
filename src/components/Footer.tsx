@@ -46,6 +46,16 @@ export default function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
+              <li>
+                <a href="tel:+918980450882" className="hover:text-[var(--color-accent)]">
+                  Rajesh Shah: +91 89804 50882
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919925069952" className="hover:text-[var(--color-accent)]">
+                  Nilesh Chauhan: +91 99250 69952
+                </a>
+              </li>
               <li>{siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}</li>
               <li>
                 <a
